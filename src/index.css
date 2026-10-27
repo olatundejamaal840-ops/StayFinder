@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Primary: Blue */
+  --color-brand-primary-900: #1e3a8a;
+  --color-brand-primary-800: #1e40af;
+  --color-brand-primary-700: #1d4ed8;
+  --color-brand-primary-600: #2563eb;
+  --color-brand-primary-500: #3b82f6;
+  --color-brand-primary-100: #dbeafe;
+  --color-brand-primary-50: #eff6ff;
+
+  /* Neutrals: Black & White */
+  --color-brand-charcoal-900: #0f172a;
+  --color-brand-charcoal-800: #1e293b;
+  --color-brand-charcoal-700: #334155;
+  --color-brand-charcoal-600: #475569;
+  --color-brand-charcoal-500: #64748b;
+  --color-brand-charcoal-400: #94a3b8;
+  --color-brand-charcoal-300: #cbd5e1;
+  --color-brand-charcoal-200: #e2e8f0;
+  --color-brand-charcoal-100: #f1f5f9;
+}
+
+/* Custom Base & Utility Rules */
+html {
+  font-family: var(--font-sans);
+  color: var(--color-brand-charcoal-900);
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Remove default number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Smooth motion token defaults */
+:root {
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 380ms;
+
+  /* Reordering Animation Tokens (Brand White, Black, and Blue Palette) */
+  --hue-1: #2563eb;
+  --hue-2: #1d4ed8;
+  --hue-3: #60a5fa;
+  --hue-4: #0f172a;
+}
+
+/* Custom structured keyframe animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 0px rgba(37, 99, 235, 0));
+  }
+  50% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.4));
+  }
+}
+
+@keyframes shimmerSlide {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmerSlide 2.5s infinite;
+}
+
