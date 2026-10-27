@@ -11,12 +11,12 @@ import { getStorage } from "firebase/storage";
 
 export const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "[GCP_API_KEY]",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "stayfinder-93229.firebaseapp.com",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "stayfinder-93229",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "stayfinder-93229.firebasestorage.app",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "541197687753",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:541197687753:web:f729b91022b5acea702618",
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "G-5D89K14TDC"
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Check if a real, non-placeholder API key is configured

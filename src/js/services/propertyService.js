@@ -10,6 +10,8 @@ import {
   collection,
   doc,
   getDocs,
+  query,
+  where,
   setDoc,
   updateDoc
 } from "firebase/firestore";
@@ -71,7 +73,9 @@ export async function getProperties(options = {}) {
   // If Firebase Firestore is configured, attempt background sync
   if (isFirebaseConfigured && db) {
     try {
-      const querySnapshot = await getDocs(collection(db, "properties"));
+      const querySnapshot = await getDocs(
+        query(collection(db, "properties"), where("listingStatus", "==", "published"))
+      );
       if (!querySnapshot.empty) {
         const firestoreListings = [];
         querySnapshot.forEach((docSnap) => {
